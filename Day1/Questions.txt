@@ -1,0 +1,24 @@
+// String: 
+Q1) Toggle each alphabet of String 
+Example : Input:- AcgDfD , Output:- aCGdFd
+Hint : Use Ascii Values
+
+Q2) Take an array of Strings words and a String Prefix. Print the number of String in words that contain "pref" as a prefix.
+Example : Input : ["pay", "attention", "practice", "attend"], pref = "at"
+Output : 2
+
+Q3) Capilatize the first and the last character of eact word in a sentence and print the new sentence
+Example : Input : Hello bhai kese ho app
+Output : HellO BhaI KesE HO ApP
+
+Q4) Accept a String and print the frequency of each character in a string
+Input : aabbcc Output : console.log(a : 2, b : 2, c : 2)
+
+Q5) Check two String are anagram or Not Anagram words have the same word length & same charater count
+Exmple : arc and car, night and thing, state and taste
+
+Q6) Maximum number of words found in a sentence
+LeetCode : https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
+
+Q7)Sort the Words of a sentence
+

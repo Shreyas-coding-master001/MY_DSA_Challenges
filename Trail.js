@@ -1,12 +1,5 @@
-// let arr = [1,2,3,4,5,6];
+let s= ["asbfj", "bfu", "zx", "uhkmol", "q"]
 
-// console.log(arr.slice(0,3));
-
-// // console.log(arr.shift());
-
-// console.log(arr);
-
-let st1 = "Hello";
-let st2 = "olle"
-
-console.log(st2.replace("i", ""));
+console.log(s.sort());
+s.splice(2,1);
+console.log(s);

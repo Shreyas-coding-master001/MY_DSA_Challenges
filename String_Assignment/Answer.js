@@ -255,6 +255,118 @@ class Solution {
         }
         return words;
     }
+
+    /**
+     * @param {String} s 
+     * @param {Number} k 
+     * @returns {String}
+     * @link https://leetcode.com/problems/calculate-digit-sum-of-a-string/description/
+     */
+    digitSum(s, k) {
+        // Write your code here
+        let sum =0, count = 0;
+        let j=0;
+        while(s.length > k){
+            if(j%k === 0 && j!== 0){
+                
+                s = s.replace(s.substring(j- k -count, j - count) ,""+sum);
+                if(Math.floor(sum%10) === 0){
+                    count += k-1;
+                }else{
+                    count += k-2;
+                }
+                
+                sum = 0;
+            }
+            
+            if(s.length - (j - count) <= 0){
+                s.replace(s.substring(j-k-count+1, j-count), ""+sum);
+                j=0;
+                count = 0;
+                sum=0
+            }
+
+            let num = Number(s[Math.abs(j - count)]);
+            sum += num;
+            j++;            
+        }
+
+        // return s;
+    }
+
+    digitSum(s, k) {
+    // Keep repeating until the string is short enough
+    while (s.length > k) {
+        let newString = "";
+        
+        // Loop through the string in chunks of size k
+        for (let i = 0; i < s.length; i += k) {
+            let chunk = s.slice(i, i + k); // Get the group of k characters
+            let sum = 0;
+            
+            // Sum up the digits in this specific chunk
+            for (let char of chunk) {
+                sum += Number(char);
+            }
+            
+                newString += sum; // Append group sum to the new round
+            }
+            
+            s = newString; // Replace original string with our new sum string
+        }
+        
+        return s;
+    }
+
+    /**
+     * @param {string sentences} s 
+     * @returns {boolean}
+     * @link https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/
+     */
+    areNumbersAscending(s) {
+        // Write your code here
+        s = s.split(" ");
+        let last_digit = null;
+        for(let i=0; i< s.length; i++){
+            // if(s[i].length > 1) continue;  #As numbers can also be of any size 60 700 9000 etc
+
+            let char_code = s[i].charCodeAt(0);
+            
+            if(char_code >= 48 && char_code <= 57){
+                let digit = Number(s[i]);
+                if(digit <= last_digit) return false;
+                else last_digit = digit;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @param {string} word
+     * @param {string} ch
+     * @return {string}
+     * @link https://leetcode.com/problems/reverse-prefix-of-word/description/
+     */
+    reversePrefix(word, ch) {
+        // Write your code here
+        let reverseword = "";
+        let i=0;
+        while(i< word.length){
+            reverseword = word.substring(i, i+1) + reverseword;
+
+            if(word[i] === ch){
+                reverseword += word.substring(i+1,);
+                break;
+            }
+
+            i++;
+        }
+
+        if(i === word.length) return word 
+
+        return reverseword;
+    }
 }
     
 

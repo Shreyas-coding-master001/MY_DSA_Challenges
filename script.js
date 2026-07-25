@@ -30,8 +30,13 @@ const obj = new Solution();
 // console.log(obj.largestGoodInteger("222"));
 // console.log(obj.digitCount("13011"));
 
-console.log(obj.removeAnagrams(["abba", "baba", "bbaa", "cd", "cd"]));
-console.log(obj.removeAnagrams(["a", "b", "c", "d", "e"]));
+// console.log(obj.removeAnagrams(["abba", "baba", "bbaa", "cd", "cd"]));
+// console.log(obj.removeAnagrams(["a", "b", "c", "d", "e"]));
+
+// console.log(obj.digitSum("11111222223", 3));
+// console.log(obj.areNumbersAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
+console.log(obj.reversePrefix("xyxzxe", "e"));
+
 
 
 

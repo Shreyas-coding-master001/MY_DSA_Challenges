@@ -1,0 +1,17 @@
+Q] A Array is given with numbers in it each values has more then 1 Frequency, but in even frequency(2, 4, 6, 8 ...) in the array instead of one element need to find the element and return the element with 1 Frequency
+example : 
+Input : [1, 2, 3, 1, 5, 2, 3, 2, 2, 8, 8]
+outpute : 5
+LeetCode : https://leetcode.com/problems/single-number/
+
+Q] 771. Jewels and Stones
+LeedCode : https://leetcode.com/problems/jewels-and-stones/description/
+
+Q] 1832. Check if the Sentence Is Pangram
+LeedCode : https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+
+Q] 2351. First Letter to Appear Twice
+LeedCode : https://leetcode.com/problems/first-letter-to-appear-twice/
+
+Q] 202. Happy Number
+LeedCode : https://leetcode.com/problems/happy-number/description/

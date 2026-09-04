@@ -13,3 +13,6 @@ LeedCode : https://leetcode.com/problems/sum-of-unique-elements/description/
 
 Q5. 2418. Sort the People
 LeedCode : https://leetcode.com/problems/sort-the-people/description/
+
+Q6. 2404. Most Frequent Even Element
+LeedCode : https://leetcode.com/problems/most-frequent-even-element/description/

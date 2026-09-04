@@ -3,7 +3,7 @@ const {  maxNumberOfBalloons  } = require("./module");
 const String_ans = require("./Day1/String_ans");
 const {countAsterisks, Solution} = require("./String_Assignment/Answer.js");
 const Multi_D = require("./Day3/Solution.js")
-const {GetFreqency, twoSum, sortPeople} = require("./Day5/Map_Solutions.js");
+const {GetFreqency, twoSum, sortPeople, mostFrequentEven} = require("./Day5/Map_Solutions.js");
 
 const obj = new Multi_D();
 
@@ -14,7 +14,8 @@ heights = [100,200,50,150]
 
 // console.log(GetFreqency(mat));
 // console.log(twoSum(mat, 9));
-console.log(sortPeople(names, heights));
+// console.log(sortPeople(names, heights));
+console.log(mostFrequentEven([0,1,2,2,4,4,1]));
 
 // console.log(obj.Question1(mat));
 // console.log(obj.Question2(mat));

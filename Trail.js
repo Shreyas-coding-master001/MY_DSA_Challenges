@@ -1,56 +1,70 @@
-// function Question5(matrix){
-//         let arr = new Array();
-//         let i =0, j=0;
+const cheerio = require('cheerio');
+
+async function printSecretMessage(url) {
+    try {
+        // 1. Fetch the published Google Doc HTML content
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to fetch document: ${response.statusText}`);
+        const html = await response.text();
+
+        // 2. Load the HTML into Cheerio for easy parsing
+        const $ = cheerio.load(html);
         
-//         if(matrix.length === 1 ) {
-//             return matrix[0];
-//         }
+        const points = [];
+        let maxX = 0;
+        let maxY = 0;
 
-//         let max_row = matrix.length - 1,
-//         max_col = matrix[i].length - 1,
-//         min_row = 0, min_col = 0
+        // 3. Loop through each row in the table
+        $('table tr').each((index, element) => {
+            // Skip the header row (usually contains words like 'x-coordinate', 'Character')
+            if (index === 0) return;
 
-//         while(min_col <= max_col && min_row <= max_col){
+            const cells = $(element).find('td');
+            if (cells.length >= 3) {
+                // Adjust text trimming based on Google Doc export formatting
+                const xStr = $(cells.eq(0)).text().trim();
+                const char = $(cells.eq(1)).text().trim();
+                const yStr = $(cells.eq(2)).text().trim();
 
-//             if(j < max_col && i <= max_row){
-//                 arr.push(matrix[i][j]);
-//                 matrix[i][j] = null;
-//                 j++;
-//             }
-//             else if(i < max_row && j === max_col){
-//                 arr.push(matrix[i][j]);    
-//                 matrix[i][j] = null;
-//                 i++;
-//             }
-//             else if(j !== min_col){
-//                 max_col--;
-//                 min_row++;
-//                 while(j !== min_col){
-//                     arr.push(matrix[i][j]);
-//                     matrix[i][j] = null;
-//                     j--;
-//                 }
-//             }
-//             else{ 
-//                 if(i === max_row) max_row--;
-//                 while(i - min_row){
-//                     arr.push(matrix[i][j]);
-//                     matrix[i][j] = null;
-//                     i--;  
-//                 }
-//                 min_col++;
-//             }
+                const x = parseInt(xStr, 10);
+                const y = parseInt(yStr, 10);
 
-//             console.log(i, j, max_col, max_row);   
-//         }
-        
-//         return arr;
-// }
+                // Ensure data rows are valid numbers
+                if (!isNaN(x) && !isNaN(y) && char) {
+                    points.push({ x, y, char });
+                    
+                    // Track grid boundaries
+                    if (x > maxX) maxX = x;
+                    if (y > maxY) maxY = y;
+                }
+            }
+        });
 
-// console.log(Question5([[1,2,3],[4,5,6],[7,8,9]]))
-// console.log(Question5([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16],[17,18,19,20],[21,22,23,24]]))
+        // 4. Initialize an empty grid filled with spaces
+        // Rows = maxY + 1, Columns = maxX + 1
+        const grid = Array.from({ length: maxY + 1 }, () => 
+            Array(maxX + 1).fill(' ')
+        );
 
-heights = [160,150,170];
-heights.sort().reverse();
-console.log(heights);
+        // 5. Populate the grid with the parsed characters
+        // Standard coordinate systems map (0,0) to top-left.
+        // If your output prints upside down, change to: grid[maxY - p.y][p.x] = p.char;
+        for (const p of points) {
+            grid[p.y][p.x] = p.char;
+        }
+
+        // 6. Print the grid line by line to reveal the secret message
+        for (let r = 0; r <= maxY; r++) {
+            console.log(grid[r].join(''));
+        }
+
+    } catch (error) {
+        console.error("Error processing the Google Doc:", error.message);
+    }
+}
+
+
+printSecretMessage('https://docs.google.com/document/d/e/2PACX-1vSvM5gDlNvt7npYHhp_XfsJvuntUhq184By5xO_pA4b_gCWeXb6dM6ZxwN8rE6S4ghUsCj2VKR21oEP/pub');
+
+
 

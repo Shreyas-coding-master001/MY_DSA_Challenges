@@ -119,6 +119,31 @@ var sortPeople = function(names, heights) {
     
 };
 
+/**
+ * @lends https://leetcode.com/problems/most-frequent-even-element/description
+ * @param {number[]} nums
+ * @return {number}
+ */
+var mostFrequentEven = function(nums) {
+    let map = new Map();
+    for(let i=0; i< nums.length; i++){
+        if(nums[i] % 2 === 0){
+            map.set(nums[i], (map.get(nums[i]) || 0) + 1);
+        }
+    }
 
+    let mostFrequentEven = -1, monstFrequnetKey = -1;
+    for(let [key, value] of map.entries()){
+        if(mostFrequentEven === value){
+            if(key < monstFrequnetKey) monstFrequnetKey = key;
+        }
+        else if(mostFrequentEven < value){
+            mostFrequentEven = value;
+            monstFrequnetKey = key;
+        }
+        
+    }
+    return monstFrequnetKey;
+};
 
-module.exports = {GetFreqency, twoSum, sortPeople};
+module.exports = {GetFreqency, twoSum, sortPeople, mostFrequentEven};

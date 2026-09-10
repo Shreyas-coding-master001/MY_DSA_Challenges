@@ -1,0 +1,82 @@
+Q1. Description
+You are given a string that contains only lowercase English letters and spaces. You're also given a mapping from characters to characters that defines how the original message was encoded.
+Your task is to decode the given message using the mapping.
+Each character in the message should be replaced with its corresponding mapped character. Spaces must remain unchanged. If a character is not present in the mapping, it should also remain unchanged.
+
+Input : Object {"a" : "c" ....} like this.
+
+example :
+1. Input
+a b
+b c
+c d
+d e
+e f
+abc de
+
+Output : bcd ef
+
+2. Input : 
+a m
+b n
+c o
+abc cab
+
+Output : mno omn
+
+Q2. Description 
+You are given a collection of candies, where each candy is represented by an integer indicating its type.
+You are also given an integer k, representing the number of distinct candy types each child must receive.
+
+Each child must receive exactly k distinct candies.
+A candy can be given to only one child and cannot be reused.
+Your task is to determine the maximum number of children that can receive such a distribution.
+The distribution must satisfy both conditions:
+Every child receives exactly k distinct candy types.
+No candy is shared between children.
+If it is not possible to distribute candies under these rules, return 0.
+
+Input : 7 3
+1 1 2 2 3 3 4
+Output : 2
+
+Input : 5 5
+1 2 3 4 5
+
+Input : 6 2
+1 1 1 1 1 1
+Output : 0
+
+Q3. Description
+You are given an array of strings and an integer k. A string is called distinct if it appears exactly once in the array. Return the k-th distinct string in the array.
+If there are fewer than k distinct strings, return "None".
+
+Input : 7
+a b c d a b e
+2
+Output : d
+
+Input : 6
+apple banana apple orange banana mango
+1
+Output : orange
+
+Q4. LeedCode : https://leetcode.com/problems/word-pattern/
+Description
+Given a string pattern and a space-separated string s, determine if s follows the same pattern.
+Here, following the pattern means that there is a one-to-one correspondence between characters in pattern and words in s:
+Each character in pattern should map to exactly one word in s.
+No two characters should map to the same word.
+Return true if s follows the pattern; otherwise, return false.
+
+Input : abba
+dog cat cat dog
+Output : true
+
+Input : abba
+dog cat cat fish
+Output : false
+
+
+Q5. LeedCode : https://leetcode.com/problems/set-mismatch/
+Title : 645. Set Mismatch

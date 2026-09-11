@@ -38,7 +38,34 @@ var maxNumberOfBalloons = function(text) {
     );
 }; 
 
+/**
+ * @leedCode https://leetcode.com/problems/unique-3-digit-even-numbers/?envType=daily-question&envId=2026-09-11
+ * @probelm 3483. Unique 3-Digit Even Numbers
+ * @param {array-of-numbers} digits 
+ * @returns {number}
+ */
+var totalNumbers = function(digits) {
+    let set =  new Set();
 
+    for(let i=0; i<digits.length; i++) {
+        //Improve Time : if(digits[i] === 0) continue;
+        for(let j=0; j< digits.length; j++) {
+            //Improve Time :  if(i === j) continue;
+            for(let k=0; k< digits.length; k++) {
+                if(i===j || j===k || i==k || digits[i] === 0) continue; // Improve : if(j===k || i==k) continue;
+
+                const digit = digits[i] + "" + digits[j] + "" + digits[k];
+                
+                if(digits[k] % 2 ===0) set.add(digit);
+            }   
+        }
+    }
+    
+    return set.size;
+};
+
+
+console.log(totalNumbers([0, 2, 2]));
 
 
 module.exports = { maxNumberOfBalloons };

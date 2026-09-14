@@ -1,0 +1,17 @@
+Q1] Swap Two integrters withour using third variable
+//Hint : Use ^(XOR) to swap
+
+Q2] Check even or odd (Use Bit Manipulation)
+//Hint : Always LSB of even will be 0
+
+Q3] Check if the ith bit is set (1) or not (0) (Bit Manipulation)
+
+Q4] Flip a Specific Bit (int n, int i) (Bit Manipulation)
+
+Q5] Check if number is power of 2 (Bit Manipulation)
+LeedCode :  https://leetcode.com/problems/power-of-two/ 
+231. Power of Two
+
+
+
+

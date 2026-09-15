@@ -1,0 +1,8 @@
+Q1] Given an integer n, print "Hello" exactly n times,
+
+Q2] Given an integer n, print all natural numbers from 1 to n.
+
+Q2] GGiven an integer n, print all natural numbers starting from n down to 1.
+
+Q2] Write a program that accepts an integer "n" and calculates the sum of the first "n" natural numbers.
+Natural numbers start from 1 and go up to "n".

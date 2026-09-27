@@ -2,7 +2,16 @@ Q1] Given an integer n, print "Hello" exactly n times,
 
 Q2] Given an integer n, print all natural numbers from 1 to n.
 
-Q2] GGiven an integer n, print all natural numbers starting from n down to 1.
+Q3] Given an integer n, print all natural numbers starting from n down to 1.
 
-Q2] Write a program that accepts an integer "n" and calculates the sum of the first "n" natural numbers.
+Q4] Write a program that accepts an integer "n" and calculates the sum of the first "n" natural numbers.
 Natural numbers start from 1 and go up to "n".
+
+Q5] Write a program that returns sum of digits in it
+
+Q6] Write a program that accepts an integer "n" as input and calculates the factorial of "n".
+
+The factorial of a non-negative integer "n" is the product of all positive integers less than or equal to "n":
+n! = n x (n-1) x (n-2) x … x 2 x 1
+     • The factorial of 0 is defined as 1 → 0! = 1.
+print your Answer.

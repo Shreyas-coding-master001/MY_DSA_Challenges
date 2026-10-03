@@ -1,3 +1,5 @@
-let n = -1
+let n = new Array(2)
 
-console.log(String(n).length);
+console.log(n[0]);
+
+

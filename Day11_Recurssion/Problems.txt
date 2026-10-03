@@ -1,0 +1,6 @@
+Q1] GCD use Recursion to solve.
+**Can also solve the leedcode question I solved using loops with recursion very complicated.**
+
+Q2] 204. Count Primes
+hint : Use Sieve of eratosthenes algorithm.
+Link : https://leetcode.com/problems/count-primes/

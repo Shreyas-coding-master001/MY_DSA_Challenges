@@ -1,5 +1,5 @@
 // String: 
-Q1) Toggle each alphabet of String 
+Q1) Toggle each alphabet of String (Ulta karo capital ko small aur samll ko capital letters)
 Example : Input:- AcgDfD , Output:- aCGdFd
 Hint : Use Ascii Values
 

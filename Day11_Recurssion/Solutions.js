@@ -88,4 +88,97 @@ var countPrimes = function(n) {
     return newArr.length;
 };
 
-console.log(countPrimes(0));
+/**
+ * 69. Sqrt(x)
+ * @param {number} x
+ * @link https://leetcode.com/problems/sqrtx/description/
+ * @return {number}
+ */
+var mySqrt = function(x) {
+    mid = Math.floor(x/2);
+    return getSqrt(mid,mid, x);
+};
+//Correctly runs but the Time and Memory is to long
+function getSqrt(i, x) {
+    if(i*i === x) {
+        return i;
+    }
+    else if(i*i> x){
+        return i-1;
+    } 
+
+    return getSqrt(i+1,x);
+}
+
+//Use binary search logic for best result but will not work with recurrsion then
+var mySqrt2 = function(n) {
+    // Write your code here
+    let first= 1, last = Math.floor(n/2), ans= 0;
+    while(first < last) {
+        let mid = first + Math.floor(last - first/2),
+        q = Math.floor(n/mid);
+
+        if(mid === q){
+            return mid;
+        }else if(mid < q){
+            ans= mid;
+            first = mid+1;
+        }else {
+            last = mid -1;
+        }
+    }
+
+    return ans;
+}
+
+/**
+ * 50. Pow(x, n)
+ * @link https://leetcode.com/problems/powx-n/description/
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
+ */
+var myPow = function(x, n) {
+    if(n===0) return 1;
+
+    // ans = getPow(1, n, Math.abs(x), x);
+    ans = getPowBetter(x,Math.abs(n));
+
+    if(n<0) ans = 1/ans;
+
+    return ans;
+};
+/**
+ * My Solutions
+ * Time : O(log(n)) 
+ * Working : x=2, n=10, 
+ * 2x2 -> 4x4 -> 16x16 -> if() 2x2 -> 256x4 = return 1024
+ * i=2 -> 4 -> 8 -> if() 2 -> 8+2 = return 10
+ */
+function getPow(i ,n, ans, x){ 
+    i = i+i;
+
+    if(i > n) {
+        i = i/2;
+        i= n-i;
+
+        if(i > 0) ans = ans * getPow(1, i, x, x) 
+
+        return ans;
+    }
+
+    return getPow(i, n, ans*ans, x);
+}
+
+//This is best for Space Complexity
+function getPowBetter(x, n){ 
+    if(n == 0) return 1;
+    let ans = getPow(x, Math.floor(n/2));
+
+    if(n%2 == 0) return ans*ans;
+
+    return ans*ans*x;
+}
+
+console.log(myPow(2.1, 3));
+

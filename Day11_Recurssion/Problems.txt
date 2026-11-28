@@ -4,3 +4,9 @@ Q1] GCD use Recursion to solve.
 Q2] 204. Count Primes
 hint : Use Sieve of eratosthenes algorithm.
 Link : https://leetcode.com/problems/count-primes/
+
+Q3]69. Sqrt(x)
+Link: https://leetcode.com/problems/sqrtx/description/
+
+Q4]50. Pow(x, n)
+Link : https://leetcode.com/problems/powx-n/description/
